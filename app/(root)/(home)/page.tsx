@@ -1,17 +1,23 @@
 import Filter from "@/components/Filter";
+import Header from "@/components/Header";
 import ResourceCard from "@/components/ResourceCard";
 import SearchForm from "@/components/SearchForm";
 import { getResources } from "@/sanity/actions";
 import React from "react";
 
-const page = async () => {
+export const revalidate = 1;
+
+interface Props {
+  searchParams: { [key: string]: string | undefined };
+}
+const page = async ({ searchParams }: Props) => {
   const resources = await getResources({
-    query: "",
-    category: "",
+    query: searchParams?.query || "",
+    category: searchParams?.category || "",
     page: "1",
   });
 
-  // console.log("resources =", resources);
+  console.log("resources =", resources);
   return (
     <main className="flex-center paddings mx-auto w-full max-w-screen-2xl flex-col bg-black-100">
       <section className="nav-padding w-full">
@@ -24,13 +30,17 @@ const page = async () => {
       </section>
       <Filter />
       <section className="flex-center mt-6 w-full flex-col sm:mt-20">
-        HEADER
+        <Header
+          query={searchParams?.query || ""}
+          category={searchParams?.category || ""}
+        />
         <div className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start">
           {resources ? (
             resources.map((resource: any) => (
               <ResourceCard
                 key={resource._id}
                 title={resource.title}
+                // type={resource.type}
                 id={resource._id}
                 image={resource.image}
                 downloadNumber={resource.views}
@@ -38,7 +48,7 @@ const page = async () => {
               />
             ))
           ) : (
-            <p className="text-white-400">No Resouce </p>
+            <p className="text-white-400">No Resouce Found in search</p>
           )}
         </div>
       </section>

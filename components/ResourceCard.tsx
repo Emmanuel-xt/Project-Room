@@ -5,7 +5,8 @@ import Image from "next/image";
 
 interface Props {
   id: string;
-  type: string;
+  // type: string;
+  title:  string ;
   image: string;
   downloadNumber: number;
   slug: string;
