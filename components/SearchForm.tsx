@@ -32,7 +32,7 @@ const SearchForm = () => {
       }
       
       router.push(newUrl, { scroll: false });
-    }, 300)
+    }, 100)
   
     return () => clearTimeout(delayDebounceFn)
   }, [search])
@@ -49,12 +49,13 @@ const SearchForm = () => {
           alt="Search icon"
         />
         <Input 
-          className="base-regular h-fit border-0 bg-black-400 py-6 pl-20 pr-8 text-white-800 !ring-0 !ring-offset-0 placeholder:text-white-800"
+          className="base-regular h-fit border-0 bg-black-400 py-2 pl-20 pr-8 text-white-800 !ring-0 !ring-offset-0 placeholder:text-white-800"
           type="text"
           placeholder="Search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+        <button type="submit" className='bg-white-800 px-3 py-3 rounded-r'>Search</button>
       </label>
     </form>
   )

@@ -4,7 +4,7 @@ import { formUrlQuery } from "@/sanity/schemas/utils";
 import {   useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 
-const links = ["all", "Next 13", "frontend", "backend", "full stack"];
+const links = ["all", "Next 13", "frontend", "backend", "Others" ];
 
 const Filter = () => {
   const [active, setActive] = useState('');
@@ -37,14 +37,14 @@ const Filter = () => {
   return (
     <ul
       className="text-white-800 body-text flex max-w-full
-     gap-2 overflow-auto py-12 sm:max-w-2xl"
+     gap-2 overflow-auto py-4 sm:max-w-2xl  "
     >
       {links.map((link) => (
         <button
           key={link}
           onClick={() => handleFilter(link)}
           className={`whitespace-nowrap rounded-lg px-8 py-2.5 capitalize ${
-            active === link && "gradient_blue-purple"
+            active === link && " bg-orange"
           }`}
         >
           {link}
