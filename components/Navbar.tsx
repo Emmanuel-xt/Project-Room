@@ -9,7 +9,7 @@ const Navbar = () => {
           <Image src='/pic.webp' width={55} height={40} alt='JSM logo' className='rounded-full' />
         </Link>
 
-        <ul className="flex-center gap-x-3 max-md:hidden md:gap-x-10">
+        <ul className="flex-center gap-x-3 md:gap-x-10">
           <li className="body-text text-white-800 !font-bold">
             <Link
               href="https://github.com/Emmanuel-xt"

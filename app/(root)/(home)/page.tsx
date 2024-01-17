@@ -47,6 +47,7 @@ const page = async ({ searchParams }: Props) => {
                 image={resource.image}
                 downloadNumber={resource.views}
                 slug={resource._id}
+                downloadLink={resource.downloadLink}
               />
             ))
           ) : (
