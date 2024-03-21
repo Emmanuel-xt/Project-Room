@@ -9,13 +9,13 @@ const Navbar = () => {
           <Image src='/pic.webp' width={55} height={40} alt='JSM logo' className='rounded-full' />
         </Link>
 
-        <ul className="flex-center gap-x-3 md:gap-x-10">
+        <ul className="flex-center gap-x-3 md:gap-x-10 border-slate-50">
           <li className="body-text text-white-800 !font-bold">
             <Link
               href="https://github.com/Emmanuel-xt"
               target="_blank"
               >
-          <Image src='/github.png' width={55} height={55} alt='JSM logo' className='rounded-full ' />
+          <Image src='/github.png' width={55} height={55} alt='JSM logo' className='rounded-full border-slate-50 ' />
                 GitHub
               </Link>
           </li>
