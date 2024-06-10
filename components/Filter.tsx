@@ -4,7 +4,7 @@ import { formUrlQuery } from "@/sanity/schemas/utils";
 import {   useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 
-const links = ["all", "Next 13", "frontend", "backend", "Others" ];
+const links = ["all", "Next Js", "frontend", "backend", "Others" ];
 
 const Filter = () => {
   const [active, setActive] = useState('');
